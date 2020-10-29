@@ -20,12 +20,20 @@ public class MailController {
 	
 	@CrossOrigin
 	@PostMapping
-	public String enviarMail(@RequestBody MailDto mail) {
-		mensajeRespuesta(mail);
-		mensajeRespuestaAdministrador(mail);
-		return "OK";
+	public String enviarMail(@RequestBody MailDto mail) throws Exception{
+		
+		String respuesta;
+		try {
+			mensajeRespuesta(mail);
+			mensajeRespuestaAdministrador(mail);
+			respuesta = "OK";
+		}catch(Exception e) {
+			respuesta = "KO";
+		};
+		return respuesta;
 	}
 	
+	@CrossOrigin
 	@GetMapping
 	public String verMail() {
 		return "inicio";
