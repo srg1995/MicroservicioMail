@@ -1,6 +1,10 @@
 package com.webPersonal.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.webPersonal.dto.AjaxResponseDto;
 import com.webPersonal.dto.MailDto;
 import com.webPersonal.service.EmailService;
 
@@ -19,18 +24,27 @@ public class MailController {
 	EmailService es;
 	
 	@CrossOrigin
-	@PostMapping
-	public String enviarMail(@RequestBody MailDto mail) throws Exception{
+	@PostMapping(
+	        consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+	        produces= {MediaType.APPLICATION_JSON_VALUE}
+			)
+	public AjaxResponseDto<MailDto> enviarMail(@RequestBody MailDto mail) throws Exception{
+		
+		AjaxResponseDto response = new AjaxResponseDto();
 		
 		String respuesta;
 		try {
 			mensajeRespuesta(mail);
 			mensajeRespuestaAdministrador(mail);
-			respuesta = "OK";
+			response.setRespuesta("OK");
 		}catch(Exception e) {
-			respuesta = "KO";
+			response.setRespuesta("KO");
+			List<String> errores = new ArrayList<String>(); 
+			errores.add("Servicio no disponible, inetntelo más tarde");
+			
+			response.setErrores(errores);
 		};
-		return respuesta;
+		return response;
 	}
 	
 	@CrossOrigin
