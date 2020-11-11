@@ -31,6 +31,7 @@ public class MailController {
 	public AjaxResponseDto<MailDto> enviarMail(@RequestBody MailDto mail) throws Exception{
 		
 		AjaxResponseDto response = new AjaxResponseDto();
+		response.setObject(mail);
 		
 		String respuesta;
 		try {
