@@ -1,0 +1,10 @@
+com/webPersonal/dto/MongoDto.class
+com/webPersonal/dto/AjaxResponseDto.class
+com/webPersonal/configuration/MongoDBConfig.class
+com/webPersonal/controller/MailController.class
+com/webPersonal/service/EmailService.class
+com/webPersonal/controller/mogoDBController.class
+com/webPersonal/dto/MailDto.class
+com/webPersonal/dto/UserMongo.class
+com/webPersonal/WebPersonalApplication.class
+com/webPersonal/service/MongoService.class
