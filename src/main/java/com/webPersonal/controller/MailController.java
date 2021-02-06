@@ -20,8 +20,6 @@ import com.webPersonal.service.EmailService;
 @RestController
 @RequestMapping("/mail")
 public class MailController {
-
-	
 	@Autowired
 	EmailService es;
 	
@@ -66,5 +64,6 @@ public class MailController {
 		/*concatenar campos de informacion del formulario y meterlo en mensaje*/
 		es.sendEmail("sergiosacristan8@gmail.com" ,  mail.getAsunto(), mail.getMensaje());
 	}
+	
 
 }
