@@ -1,0 +1,5 @@
+com/webPersonal/dto/AjaxResponseDto.class
+com/webPersonal/dto/MailDto.class
+com/webPersonal/controller/MailController.class
+com/webPersonal/WebPersonalApplication.class
+com/webPersonal/service/EmailService.class

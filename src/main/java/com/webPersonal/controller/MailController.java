@@ -20,6 +20,7 @@ import com.webPersonal.service.EmailService;
 @RequestMapping("/mail")
 public class MailController {
 
+	
 	@Autowired
 	EmailService es;
 	
