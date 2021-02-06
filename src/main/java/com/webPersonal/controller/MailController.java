@@ -16,6 +16,7 @@ import com.webPersonal.dto.AjaxResponseDto;
 import com.webPersonal.dto.MailDto;
 import com.webPersonal.service.EmailService;
 
+
 @RestController
 @RequestMapping("/mail")
 public class MailController {
