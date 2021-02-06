@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.webPersonal.dto.MongoDto;
 import com.webPersonal.service.MongoService;
 
-@RestController
-@RequestMapping("/mongoDDBB")
+
 public class mogoDBController {
 
 	@Autowired
