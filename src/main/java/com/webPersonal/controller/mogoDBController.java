@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ public class mogoDBController {
 	@Autowired
 	MongoService ms;
 	
+	@CrossOrigin
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -27,6 +29,7 @@ public class mogoDBController {
 		return ms.guardar(entity);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/borrar", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -34,6 +37,7 @@ public class mogoDBController {
 		return ms.borrar(entity);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/actualizar", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -41,6 +45,7 @@ public class mogoDBController {
 		return ms.actualizar(entity);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/consultarPorId", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,6 +53,7 @@ public class mogoDBController {
 		return ms.consultarPorId(entity);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/consultarTodos", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
